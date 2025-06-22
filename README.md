@@ -14,19 +14,19 @@
 >
 > -- <cite> Me, always </cite>
 
-One way to truly become organized is to note down anything that comes to mind *as* it comes to mind: to jot down your thoughts. The obvious next step is to keep an agenda in which you note the day you're taking notes, and then jot away anything you're thinking. jotty is 60-lines of bash script that allows you to quickly open your favorite editor (neovim by default) to jot down your thoughts (type "jotty new" and press Enter).
+One way to truly become organized is to note down anything that comes to mind *as* it comes to mind: to jot down your thoughts. The obvious next step is to keep an agenda in which you note the day you're taking notes, and then jot away anything you're thinking. With Jotty you'll do the same from the comfort of the CLI.
 
-Notes are saved as .txt files with the name of the day (YYYY-MM-DD.txt) in the /user/notes folder. You can easily change the notes' extension and folder directly in the .sh, .txt is the default for simplicity.
+Simply launch `jotty new` and jot down your thoughts with your favorite text editor (nvim by default). Your notes are saved as .txt files with the name of the day (YYYY-MM-DD.txt) in the `$HOME/notes` folder. You can easily change the editor and the notes' extension and folder (See Installation, Step 1).
 
 Jotty offers a simple search functionality. You can search for a specific keyword (`jotty search <keyword>`), or for all the notes in a specific year (`jotty search-year <YYYY>`) or month (`jotty search-month <YYYY-MM>`).
 
 Quickly open notes by typing `jotty view <YYYY-MM-DD>`. Keep using `jotty new` to open today's notes. List all notes in your folder with `jotty list`.
 
-This is all Jotty offers. For me, Jotty takes the sweetspot for a simple and usefult CLI tool to quickly take notes and keep them organized by their date. 
-
 All jotty search commands as well as the jotty list command output the file names followed by the first line of the notes. Consider adding a "header" to all your notes in which you summarize the contents of that day's jotting session. This will allow you to recognize notes immediately: finding the notes you took for that one thing you were doing two months ago will be easier.
 
-That is all. Jot away!
+And that's it. For me, Jotty takes the sweetspot for a simple and usefult CLI tool to quickly take notes and keep them organized by their date. 
+
+Jot away!
 
 Caps
 
@@ -92,7 +92,6 @@ Output:
 ```
 2025-06-10.txt: Set up the homelab storage. Installed Tailscale on main node. AI node pending.
 2025-06-14.txt: Planning network structure for homelab. Will test SSH tunnels between nodes.
-2025-06-10.txt: Set up the homelab storage. Installed Tailscale on main node. AI node pending.
 ```
 
 ### Search Notes by Month
