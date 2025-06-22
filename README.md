@@ -5,7 +5,7 @@
 <h1 align="center">Jotty</h1>
 
 <p align="center">
-  A cozy, minimalist command-line note-taking tool.
+  Minimalist command-line note-taking tool.
 </p>
 
 # Jotty
