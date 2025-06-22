@@ -91,7 +91,8 @@ Output:
 
 ```
 2025-06-10.txt: Set up the homelab storage. Installed Tailscale on main node. AI node pending.
-2025-06-14.txt: Planning network structure for homelab. Will test SSH tunnels between nodes.2025-06-10.txt: Set up the homelab storage. Installed Tailscale on main node. AI node pending.
+2025-06-14.txt: Planning network structure for homelab. Will test SSH tunnels between nodes.
+2025-06-10.txt: Set up the homelab storage. Installed Tailscale on main node. AI node pending.
 ```
 
 ### Search Notes by Month
