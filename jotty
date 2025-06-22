@@ -1,0 +1,63 @@
+#!/bin/bash
+
+NOTES_DIR="$HOME/notes"
+EDITOR="nvim"
+
+mkdir -p "$NOTES_DIR"
+
+today=$(date +"%F")
+note_file="$NOTES_DIR/$today.txt"
+
+print_snippet() {
+  file="$1"
+  echo -n "$(basename "$file"): "
+  head -n 2 "$file" | tr '\n' ' ' | cut -c1-120
+  echo
+}
+
+case "$1" in
+  new)
+    $EDITOR "$note_file"
+    ;;
+  search)
+    if [ -z "$2" ]; then
+      echo "Usage: $0 search <keyword>"
+      exit 1
+    fi
+    grep -rl "$2" "$NOTES_DIR" | while read -r file; do
+      print_snippet "$file"
+    done
+    ;;
+  search-month)
+    if [ -z "$2" ]; then
+      echo "Usage: $0 search-month <YYYY-MM>"
+      exit 1
+    fi
+    find "$NOTES_DIR" -name "$2-*.txt" | while read -r file; do
+      print_snippet "$file"
+    done
+    ;;
+  search-year)
+    if [ -z "$2" ]; then
+      echo "Usage: $0 search-year <YYYY>"
+      exit 1
+    fi
+    find "$NOTES_DIR" -name "$2-*.txt" | while read -r file; do
+      print_snippet "$file"
+    done
+    ;;
+  list)
+    ls "$NOTES_DIR"
+    ;;
+  view)
+    if [ -z "$2" ]; then
+      echo "Usage: $0 view <YYYY-MM-DD>"
+      exit 1
+    fi
+    $EDITOR "$NOTES_DIR/$2.txt"
+    ;;
+  *)
+    echo "Usage: $0 {new|search <keyword>|search-month <YYYY-MM>|search-year <YYYY>|view <YYYY-MM-DD>|list}"
+    ;;
+esac
+
