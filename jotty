@@ -26,6 +26,8 @@ case "$1" in
     fi
     grep -rl "$2" "$NOTES_DIR" | while read -r file; do
       print_snippet "$file"
+      grep -i -n --color "$2" "$file"
+      echo
     done
     ;;
   search-month)
