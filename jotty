@@ -47,7 +47,9 @@ case "$1" in
     done
     ;;
   list)
-    ls "$NOTES_DIR"
+    ls "$NOTES_DIR" | while read -r file; do
+      print_snippet "$NOTES_DIR/$file"
+    done
     ;;
   view)
     if [ -z "$2" ]; then
